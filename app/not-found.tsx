@@ -1,6 +1,7 @@
 import Image from "next/image";
 import error from "@/public/images/404.avif";
 import Link from "next/link";
+import { FaHome } from "react-icons/fa";
 
 export default function NotFound() {
   return (
@@ -15,8 +16,8 @@ export default function NotFound() {
           </h1>
           <Link
             href="/"
-            className="inline-flex w-fit text-secondary-800 border-2 border-secondary-800 rounded-lg px-4 py-1 bg-primary-800">
-            Return home
+            className="inline-flex items-center gap-2 w-fit text-secondary-800 border-2 border-secondary-800 rounded-lg px-4 py-1.5 bg-primary-800">
+            <FaHome /> Return home
           </Link>
         </div>
       </div>
