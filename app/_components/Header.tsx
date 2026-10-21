@@ -10,7 +10,7 @@ export default function Header() {
   const pathName = usePathname();
 
   return (
-    <header className="sticky top-5 z-100 backdrop-blur-lg">
+    <header className="sticky top-5 z-100 backdrop-blur-lg -mx-3">
       <div className="flex justify-between items-center border-2 border-secondary-800 rounded-lg h-15 gap-1 relative text-secondary-700">
         <div className="h-full bg-primary-800 rounded-tl-md rounded-bl-md border-r-2 border-r-secondary-800 grid place-items-center px-5 lg:px-6">
           <Image
