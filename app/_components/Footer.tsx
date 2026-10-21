@@ -29,19 +29,19 @@ export default function Footer() {
 
             <div className="self-start flex flex-col gap-3 text-secondary-800">
               <p className="flex gap-2 items-center">
-                <span className="border-2 rounded-sm w-6 h-6 grid place-items-center bg-primary-300">
+                <span className="border-2 rounded-md w-6 h-6 grid place-items-center bg-primary-300">
                   <HiMail size={13} />
                 </span>
                 example@gmail.com
               </p>
               <p className="flex gap-2 items-center">
-                <span className="border-2 rounded-sm w-6 h-6 grid place-items-center bg-primary-300">
+                <span className="border-2 rounded-md w-6 h-6 grid place-items-center bg-primary-300">
                   <HiPhone size={13} />
                 </span>
                 +234 123 4567 890
               </p>
               <p className="flex gap-2 items-center">
-                <span className="border-2 rounded-sm w-6 h-6 grid place-items-center bg-primary-300">
+                <span className="border-2 rounded-md w-6 h-6 grid place-items-center bg-primary-300">
                   <HiLocationMarker size={13} />
                 </span>
                 Nigeria
@@ -98,13 +98,13 @@ export default function Footer() {
             </div>
 
             <div className="flex gap-2">
-              <span className="border-2 rounded-sm w-8 h-8 grid place-items-center bg-primary-500 text-secondary-800">
+              <span className="border-2 rounded-lg w-8 h-8 grid place-items-center bg-primary-500 text-secondary-800">
                 <FaFacebook size={15} />
               </span>
-              <span className="border-2 rounded-sm w-8 h-8 grid place-items-center bg-primary-500 text-secondary-800">
+              <span className="border-2 rounded-lg w-8 h-8 grid place-items-center bg-primary-500 text-secondary-800">
                 <FaXTwitter size={15} />
               </span>
-              <span className="border-2 rounded-sm w-8 h-8 grid place-items-center bg-primary-500 text-secondary-800">
+              <span className="border-2 rounded-lg w-8 h-8 grid place-items-center bg-primary-500 text-secondary-800">
                 <FaLinkedin size={15} />
               </span>
             </div>
