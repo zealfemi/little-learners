@@ -62,7 +62,7 @@ export default function Testimonials() {
                       alt={testimonial.name}
                       width={45}
                       height={45}
-                      className="object-cover"
+                      className="object-cover rounded-full"
                     />
                   </div>
                   <p className="text-secondary-800 font-semibold mt-3">
