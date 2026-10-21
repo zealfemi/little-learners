@@ -5,8 +5,8 @@ import { FaHome } from "react-icons/fa";
 
 export default function NotFound() {
   return (
-    <div className="min-h-[calc(100vh-40px)] flex flex-col justify-between relative gap-6">
-      <div className="flex flex-col md:flex-row gap-6 lg:gap-30">
+    <div className="min-h-screen flex flex-col justify-between relative gap-6">
+      <div className="flex flex-col md:flex-row gap-6 lg:gap-30 px-4 md:px-12.5 py-5">
         <p className="uppercase font-header font-semibold">
           404 Error. Page not Found
         </p>

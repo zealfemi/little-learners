@@ -27,8 +27,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={`${raleway.variable} ${outfit.variable} h-full antialiased`}>
-      <body className="min-h-full max-w-[2000px] flex flex-col px-4 md:px-12.5 py-5">
-        <main className="flex flex-col">{children}</main>
+      <body className="min-h-full max-w-[2000px] flex flex-col">
+        <main>{children}</main>
       </body>
     </html>
   );
