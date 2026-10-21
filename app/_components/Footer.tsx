@@ -13,6 +13,7 @@ export default function Footer() {
             <Image
               src={logo}
               alt="site logo"
+              quality={100}
               className="w-35 md:w-38 lg:w-45 object-cover"
             />
           </div>
