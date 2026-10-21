@@ -54,9 +54,9 @@ export default function Testimonials() {
         {testimonials.map((testimonial: testimonialType) => (
           <div key={testimonial.name} className="flex h-full">
             <Card>
-              <div className="flex flex-col gap-5 items-center text-center">
-                <div>
-                  <div className="w-16.5 h-16.5 rounded-full border-2 grid place-items-center">
+              <div className="flex flex-col gap-5 items-center text-center justify-center w-full">
+                <div className="flex flex-col gap-3 items-center justify-center">
+                  <div className="w-16.5 h-16.5 rounded-full border-2 flex flex-col items-center justify-center">
                     <Image
                       src={testimonial.image}
                       alt={testimonial.name}
@@ -65,7 +65,7 @@ export default function Testimonials() {
                       className="object-cover rounded-full"
                     />
                   </div>
-                  <p className="text-secondary-800 font-semibold mt-3">
+                  <p className="text-secondary-800 font-semibold">
                     {testimonial.name}
                   </p>
                 </div>
