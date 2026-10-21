@@ -11,7 +11,7 @@ export default function Header() {
 
   return (
     <header className="flex justify-between items-center border-2 border-secondary-800 rounded-lg h-15 gap-1 relative text-secondary-700">
-      <div className="h-full bg-primary-800 rounded-tl-lg rounded-bl-lg border-r-2 border-r-secondary-800 grid place-items-center px-5 lg:px-6">
+      <div className="h-full bg-primary-800 rounded-tl-md rounded-bl-md border-r-2 border-r-secondary-800 grid place-items-center px-5 lg:px-6">
         <Image
           src={logo}
           alt="site logo"
@@ -48,7 +48,7 @@ export default function Header() {
         </Link>
         <Link
           href="/contact"
-          className="bg-primary-800 border-l-2 border-l-secondary-800 px-5 lg:px-6 grid place-items-center h-full rounded-tr-lg rounded-br-lg hover:bg-primary-300">
+          className="bg-primary-800 border-l-2 border-l-secondary-800 px-5 lg:px-6 grid place-items-center h-full rounded-tr-md rounded-br-md hover:bg-primary-300">
           Contact
         </Link>
       </nav>
