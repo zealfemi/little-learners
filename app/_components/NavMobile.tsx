@@ -24,8 +24,10 @@ export default function NavMobile() {
       </button>
 
       <nav
-        className={`md:hidden absolute top-15 flex flex-col w-full border-2 border-secondary-800 bg-primary-100 rounded-lg transition-all duration-500 ease-in-out z-5 ${
-          showMenu ? "left-0" : "md:hidden -left-250"
+        className={`md:hidden absolute top-15 w-full border-2 border-secondary-800 bg-primary-100 rounded-lg z-5 grid transition-all duration-500 ease-in-out overflow-hidden ${
+          showMenu
+            ? "grid-rows-[1fr] opacity-100"
+            : "grid-rows-[0fr] opacity-0 mt-0"
         }`}>
         <Link
           href="/"
