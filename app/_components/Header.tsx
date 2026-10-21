@@ -11,8 +11,10 @@ export default function Header() {
 
   return (
     <header className="sticky top-5 z-100 backdrop-blur-lg -mx-1.5">
-      <div className="flex justify-between items-center border-2 border-secondary-800 rounded-lg h-15 gap-1 relative text-secondary-700">
-        <div className="h-full bg-primary-800 rounded-tl-md rounded-bl-md border-r-2 border-r-secondary-800 grid place-items-center px-5 lg:px-6">
+      <div className="flex justify-between items-center border-2 border-secondary-800 rounded-lg h-15 gap-1 relative text-secondary-700 overflow-hidden">
+        <Link
+          href="/"
+          className="h-full bg-primary-800 rounded-tl-md rounded-bl-md border-r-2 border-r-secondary-800 grid place-items-center px-5 lg:px-6">
           <Image
             src={logo}
             alt="site logo"
@@ -20,7 +22,7 @@ export default function Header() {
             placeholder="blur"
             className="w-35 md:w-38 lg:w-45 object-cover"
           />
-        </div>
+        </Link>
 
         {/* LAPTOP AND PC NAV */}
         <nav className="hidden md:flex items-center text-center h-full">
