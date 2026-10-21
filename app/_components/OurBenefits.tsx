@@ -11,6 +11,7 @@ import Card from "./Card";
 import HeadingText from "./HeadingText";
 import HeadingTextBefore from "./HeadingTextBefore";
 import SectionHeader from "./SectionHeader";
+import Section from "./Section";
 
 type benefitType = {
   icon: IconType;
@@ -59,7 +60,7 @@ const benefits: benefitType[] = [
 
 export default function OurBenefits() {
   return (
-    <div className="py-10 md:py-15 lg:py-20 md:px-5">
+    <Section>
       <SectionHeader>
         <HeadingTextBefore>Children Deserve Bright Future</HeadingTextBefore>
         <HeadingText>Our Benefits</HeadingText>
@@ -82,6 +83,6 @@ export default function OurBenefits() {
           </div>
         ))}
       </div>
-    </div>
+    </Section>
   );
 }
