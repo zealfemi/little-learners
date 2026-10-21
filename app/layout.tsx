@@ -6,7 +6,7 @@ import Footer from "./_components/Footer";
 
 const raleway = Raleway({
   variable: "--font-raleway",
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic", "vietnamese"],
   display: "auto",
 });
 
@@ -28,7 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${raleway.className} ${outfit.className} h-full antialiased`}>
+      className={`${raleway.variable} ${outfit.variable} h-full antialiased`}>
       <body className="min-h-full max-w-[2000px] flex flex-col px-4 md:px-12.5 py-5">
         <Header />
         <main className="flex-1">{children}</main>
