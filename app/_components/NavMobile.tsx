@@ -26,39 +26,47 @@ export default function NavMobile() {
       <nav
         className={`md:hidden absolute top-15 w-full border-2 border-secondary-800 bg-primary-100 rounded-lg z-5 grid transition-all duration-500 ease-in-out overflow-hidden ${
           showMenu
-            ? "grid-rows-[1fr] opacity-100"
-            : "grid-rows-[0fr] opacity-0 mt-0"
+            ? "grid-rows-[1fr] opacity-100 pointer-events-auto"
+            : "grid-rows-[0fr] opacity-0 pointer-events-none"
         }`}>
-        <Link
-          href="/"
-          className={`${pathName === "/" && "bg-primary-400"} border-b-2 border-b-secondary-800 rounded-tl-md rounded-tr-md py-5 grid place-items-center h-full hover:bg-primary-300`}>
-          Home
-        </Link>
-        <Link
-          href="/about"
-          className={`${pathName === "/about" && "bg-primary-400"} border-b-2 border-b-secondary-800 py-5 grid place-items-center h-full hover:bg-primary-300`}>
-          About
-        </Link>
-        <Link
-          href="/academics"
-          className={`${pathName === "/academics" && "bg-primary-400"} border-b-2 border-b-secondary-800 py-5 grid place-items-center h-full hover:bg-primary-300`}>
-          Academics
-        </Link>
-        <Link
-          href="/admission"
-          className={`${pathName === "/admission" && "bg-primary-400"} border-b-2 border-b-secondary-800 py-5 grid place-items-center h-full hover:bg-primary-300`}>
-          Admission
-        </Link>
-        <Link
-          href="/student-life"
-          className={`${pathName === "/student-life" && "bg-primary-400"} border-b-2 border-b-secondary-800 py-5 grid place-items-center h-full hover:bg-primary-300`}>
-          Student Life
-        </Link>
-        <Link
-          href="/contact"
-          className="bg-primary-800 rounded-bl-md rounded-br-md py-5 grid place-items-center h-full hover:bg-primary-300">
-          Contact
-        </Link>
+        <div className="min-h-0 flex flex-col">
+          <Link
+            href="/"
+            onClick={toggleMenu}
+            className={`${pathName === "/" && "bg-primary-400"} border-b-2 border-b-secondary-800 rounded-tl-md rounded-tr-md py-5 grid place-items-center h-full hover:bg-primary-300`}>
+            Home
+          </Link>
+          <Link
+            href="/about"
+            onClick={toggleMenu}
+            className={`${pathName === "/about" && "bg-primary-400"} border-b-2 border-b-secondary-800 py-5 grid place-items-center h-full hover:bg-primary-300`}>
+            About
+          </Link>
+          <Link
+            href="/academics"
+            onClick={toggleMenu}
+            className={`${pathName === "/academics" && "bg-primary-400"} border-b-2 border-b-secondary-800 py-5 grid place-items-center h-full hover:bg-primary-300`}>
+            Academics
+          </Link>
+          <Link
+            href="/admission"
+            onClick={toggleMenu}
+            className={`${pathName === "/admission" && "bg-primary-400"} border-b-2 border-b-secondary-800 py-5 grid place-items-center h-full hover:bg-primary-300`}>
+            Admission
+          </Link>
+          <Link
+            href="/student-life"
+            onClick={toggleMenu}
+            className={`${pathName === "/student-life" && "bg-primary-400"} border-b-2 border-b-secondary-800 py-5 grid place-items-center h-full hover:bg-primary-300`}>
+            Student Life
+          </Link>
+          <Link
+            href="/contact"
+            onClick={toggleMenu}
+            className="bg-primary-800 rounded-bl-md rounded-br-md py-5 grid place-items-center h-full hover:bg-primary-300">
+            Contact
+          </Link>
+        </div>
       </nav>
     </>
   );

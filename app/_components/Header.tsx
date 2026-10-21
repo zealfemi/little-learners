@@ -11,7 +11,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-5 z-100 backdrop-blur-lg -mx-1.5">
-      <div className="flex justify-between items-center border-2 border-secondary-800 rounded-lg h-15 gap-1 relative text-secondary-700 overflow-hidden">
+      <div className="flex justify-between items-center border-2 border-secondary-800 rounded-lg h-15 gap-1 relative text-secondary-700">
         <Link
           href="/"
           className="h-full bg-primary-800 rounded-tl-md rounded-bl-md border-r-2 border-r-secondary-800 grid place-items-center px-5 lg:px-6">
