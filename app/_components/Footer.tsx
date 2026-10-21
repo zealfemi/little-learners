@@ -14,6 +14,7 @@ export default function Footer() {
               src={logo}
               alt="site logo"
               quality={100}
+              placeholder="blur"
               className="w-35 md:w-38 lg:w-45 object-cover"
             />
           </div>
