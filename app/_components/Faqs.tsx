@@ -75,11 +75,9 @@ export default function Faqs() {
         </p>
       </SectionHeader>
 
-      <div className="flex flex-col md:flex-row flex-wrap mt-6 gap-6 lg:gap-7.5">
+      <div className="grid md:grid-cols-2 place-items-start mt-6 gap-6 lg:gap-7.5">
         {faqs.map((faq: faqsType) => (
-          <div
-            key={faq.question}
-            className="w-full md:w-[calc(50%-12px)] lg:w-[calc(50%-15px)] h-auto">
+          <div key={faq.question}>
             <Faq
               question={faq.question}
               answer={faq.answer}
