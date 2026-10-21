@@ -12,7 +12,8 @@ export default function Faq({
   isOpen: boolean;
 }) {
   return (
-    <div className="border-2 border-secondary-800 rounded-lg py-6 px-7 lg:py-8 lg:px-9">
+    <div
+      className={`border-2 border-secondary-800 rounded-lg py-6 px-7 lg:py-8 lg:px-9 ${isOpen && "bg-primary-100"} transition-all duration-300 ease-in-out`}>
       <div className="w-full">
         <button
           className="text-lg lg:text-[22px] font-semibold text-secondary-800 flex justify-between items-center gap-6 lg:gap-7.5 w-full"
