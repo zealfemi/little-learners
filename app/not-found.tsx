@@ -13,7 +13,11 @@ export default function NotFound() {
           <h1 className="text-2xl lg:text-3xl font-bold">
             If you’re reading this, something has gone terribly, terribly wrong.
           </h1>
-          <Link href="/">Return home</Link>
+          <Link
+            href="/"
+            className="inline-flex w-fit text-secondary-800 border-2 border-secondary-800 rounded-lg px-4 py-1 bg-primary-800">
+            Return home
+          </Link>
         </div>
       </div>
 
