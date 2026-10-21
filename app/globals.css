@@ -1,26 +1,181 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* primary colors */
+  --color-primary-100: #fffcfa;
+  --color-primary-200: #fff5f0;
+  --color-primary-300: #ffefe5;
+  --color-primary-400: #ffdecc;
+  --color-primary-500: #ffbe99;
+  --color-primary-600: #ffae80;
+  --color-primary-700: #ff9e66;
+  --color-primary-800: #ff8d4c;
 
-@theme inline {
+  /* secondary colors */
+  --color-secondary-100: #b3b3b3;
+  --color-secondary-200: #98989a;
+  --color-secondary-300: #656567;
+  --color-secondary-400: #59595a;
+  --color-secondary-500: #4c4c4d;
+  --color-secondary-600: #333333;
+  --color-secondary-700: #262626;
+  --color-secondary-800: #191919;
+
+  /* styling */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-header: var(--font-raleway);
+  --font-content: var(--font-outfit);
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
+  :root {
+    --background: var(--color-primary-200);
+    --foreground: var(--color-secondary-500);
+  }
+}
+
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-content);
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-header);
+}
+
+.card {
+  background-color: #ffffff;
+  border: 2px solid var(--color-secondary-700);
+  padding: 40px;
+  gap: 40px;
+  box-shadow: 4px 4px 0px 1px var(--color-secondary-800);
+  border-radius: 8px;
+}
+.card-orange {
+  background-color: var(--color-primary-300);
+  border: 2px solid var(--color-secondary-700);
+  padding: 40px;
+  gap: 40px;
+  box-shadow: 4px 4px 0px 1px var(--color-primary-800);
+  border-radius: 8px;
+}
+
+/* Container holds the main vertical line */
+.timeline-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Spacing between rows */
+  padding-left: 50px; /* Space for the connector diagram */
+  font-family: sans-serif;
+}
+
+/* 1. Main Vertical Line */
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  bottom: 22px;
+  left: 15px;
+  width: 5px; /* Total width of the line */
+  /* Creates a 2px orange left, 1px black center, 2px orange right pattern[cite: 2] */
+  background: linear-gradient(
+    to right,
+    #ffb98a 2px,
+    #1a1a1a 2px,
+    #1a1a1a 3px,
+    #ffb98a 3px
+  );
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* 2. Outer Circle (on the vertical line) */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -35px; /* Pushes back to perfectly intersect the vertical line */
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff; /* White fill[cite: 2] */
+  border: 1px solid #1a1a1a; /* Dark border[cite: 2] */
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* 3. Horizontal Connecting Line */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  left: -35px;
+  width: 32px;
+  height: 5px; /* Total height of the line */
+  /* Creates a 2px orange top, 1px black center, 2px orange bottom pattern[cite: 2] */
+  background: linear-gradient(
+    to bottom,
+    #ffb98a 2px,
+    #1a1a1a 2px,
+    #1a1a1a 3px,
+    #ffb98a 3px
+  );
+  z-index: 1;
+}
+
+/* The Content Box */
+.timeline-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid #1a1a1a;
+  border-radius: 6px;
+  padding: 10px 20px;
+  box-shadow: 3px 3px 0px #1a1a1a; /* Solid offset shadow[cite: 2] */
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+}
+
+/* 4. Inner Circle (attached to the card) */
+.timeline-card::before {
+  content: "";
+  position: absolute;
+  left: -5px; /* Pulls slightly outside the left border of the card */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff; /* White fill[cite: 2] */
+  border: 1px solid #1a1a1a; /* Dark border[cite: 2] */
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* Optional icon styling */
+.icon {
+  color: #ff9e66;
+  font-size: 1.4rem;
 }
