@@ -1,0 +1,31 @@
+import Image from "next/image";
+import error from "@/public/images/404.avif";
+import Link from "next/link";
+
+export default function NotFound() {
+  return (
+    <div className="min-h-[calc(100vh-40px)] flex flex-col justify-between relative">
+      <div className="flex flex-col md:flex-row gap-6 lg:gap-30">
+        <p className="uppercase font-header font-semibold">
+          404 Error. Page not Found
+        </p>
+        <div className="flex flex-col gap-6 lg:gap-10 max-w-100">
+          <h1 className="text-2xl lg:text-3xl font-bold">
+            If you’re reading this, something has gone terribly, terribly wrong.
+          </h1>
+          <Link href="/">Return home</Link>
+        </div>
+      </div>
+
+      <div className="absolute bottom-0 w-full">
+        <Image
+          src={error}
+          alt="page not found"
+          className="object-cover w-full max-w-full"
+          unoptimized
+          priority
+        />
+      </div>
+    </div>
+  );
+}

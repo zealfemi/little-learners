@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, Raleway } from "next/font/google";
 import "./globals.css";
-import Header from "./_components/Header";
-import Footer from "./_components/Footer";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -30,9 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${raleway.variable} ${outfit.variable} h-full antialiased`}>
       <body className="min-h-full max-w-[2000px] flex flex-col px-4 md:px-12.5 py-5">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <main className="flex flex-col">{children}</main>
       </body>
     </html>
   );

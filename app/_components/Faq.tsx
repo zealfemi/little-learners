@@ -15,9 +15,9 @@ export default function Faq({
     <div className="border-2 border-secondary-800 rounded-lg py-6 px-7 lg:py-8 lg:px-9">
       <div className="w-full">
         <button
-          className="text-lg lg:text-[22px] font-semibold text-secondary-800 flex justify-between items-center gap-6 lg:gap-7.5 text-left"
+          className="text-lg lg:text-[22px] font-semibold text-secondary-800 flex justify-between items-center gap-6 lg:gap-7.5 w-full"
           onClick={() => onClick()}>
-          <span>{question}</span>
+          <span className="text-left">{question}</span>
           <span className="border-2 rounded-md w-6 h-6 text-sm grid place-items-center bg-primary-300 cursor-pointer shrink-0">
             {!isOpen ? <FaPlus /> : <FaMinus />}
           </span>
