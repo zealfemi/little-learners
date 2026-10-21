@@ -58,34 +58,6 @@ h6 {
   font-family: var(--font-header);
 }
 
-.card {
-  background-color: var(--color-primary-100);
-  border: 2px solid var(--color-secondary-800);
-  padding: 40px;
-  gap: 40px;
-  box-shadow: 4px 4px 0px 1px var(--color-secondary-800);
-  border-radius: 8px;
-}
-.card-orange {
-  background-color: var(--color-primary-300);
-  border: 2px solid var(--color-secondary-700);
-  padding: 40px;
-  gap: 40px;
-  box-shadow: 4px 4px 0px 1px var(--color-primary-800);
-  border-radius: 8px;
-}
-
-.before-heading {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-
-  background: var(--color-primary-100);
-  border: 2px solid var(--color-secondary-800);
-  border-radius: 8px;
-}
-
 /* Container holds the main vertical line */
 .timeline-container {
   position: relative;
