@@ -61,7 +61,7 @@ export default function ExploreMore() {
 
                 <Link
                   href={page.link}
-                  className="mt-5 flex gap-2 items-center justify-center bg-primary-500 w-full border-2 border-secondary-800 rounded-lg text-sm p-4 md:p-4.5 text-secondary-800 shadow-[2px_2px_0px_1px] shadow-secondary-800 hover:bg-primary-300">
+                  className="mt-5 flex gap-2 items-center justify-center bg-primary-500 w-full border-2 border-secondary-800 rounded-lg p-4 md:p-4.5 text-secondary-800 shadow-[2px_2px_0px_1px] shadow-secondary-800 hover:bg-primary-300">
                   Learn more <FaArrowRight />
                 </Link>
               </div>
