@@ -16,7 +16,7 @@ export default function NotFound() {
           </h1>
           <Link
             href="/"
-            className="inline-flex items-center gap-2 w-fit text-secondary-800 border-2 border-secondary-800 rounded-lg px-4 py-1.5 bg-primary-800">
+            className="inline-flex items-center gap-2 w-fit text-secondary-800 font-medium border-2 border-secondary-800 rounded-lg px-5 py-2.5 bg-primary-800 hover:bg-primary-400 transition-colors">
             <FaHome /> Return home
           </Link>
         </div>
