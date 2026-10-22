@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FaHome, FaTruckLoading } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import { HiRefresh } from "react-icons/hi";
 
 export default function Error({
