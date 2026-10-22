@@ -3,6 +3,7 @@ import Image from "next/image";
 import Card from "./Card";
 import HeadingText from "./HeadingText";
 import HeadingTextBefore from "./HeadingTextBefore";
+import { PropsWithChildren } from "react";
 
 type pageHeaderType = {
   heading: string;
@@ -14,7 +15,8 @@ export default function PageHeader({
   heading,
   content,
   subHeading,
-}: pageHeaderType) {
+  children,
+}: PropsWithChildren<pageHeaderType>) {
   return (
     <Card>
       <Image
@@ -28,7 +30,10 @@ export default function PageHeader({
           <HeadingTextBefore>{subHeading}</HeadingTextBefore>
           <HeadingText>{heading}</HeadingText>
         </div>
-        <p className="">{content}</p>
+        <div className="flex flex-col gap-6">
+          <p className="">{content}</p>
+          {children}
+        </div>
       </div>
     </Card>
   );
