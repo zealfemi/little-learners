@@ -5,6 +5,7 @@ import HeadingTextBefore from "./HeadingTextBefore";
 import Section from "./Section";
 import SectionHeader from "./SectionHeader";
 import { FaStar } from "react-icons/fa6";
+import Carousel from "./Carousel";
 
 type testimonialType = {
   image: string;
@@ -50,35 +51,37 @@ export default function Testimonials() {
         </p>
       </SectionHeader>
 
-      <div className="mt-6 grid gap-6 md:grid-cols-3 h-full">
-        {testimonials.map((testimonial: testimonialType) => (
-          <div key={testimonial.name} className="flex h-full">
-            <Card>
-              <div className="flex flex-col gap-5 items-center text-center justify-center w-full">
-                <div className="flex flex-col gap-3 items-center justify-center">
-                  <div className="w-16.5 h-16.5 rounded-full border-2 flex flex-col items-center justify-center border-secondary-800 bg-primary-100">
-                    <Image
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      width={45}
-                      height={45}
-                      className="object-cover rounded-full"
-                    />
+      <div className="mt-10 h-full">
+        <Carousel
+          slides={testimonials.map((testimonial: testimonialType) => (
+            <div key={testimonial.name} className="flex h-full w-full">
+              <Card>
+                <div className="flex flex-col gap-5 items-center text-center justify-center w-full">
+                  <div className="flex flex-col gap-3 items-center justify-center">
+                    <div className="w-16.5 h-16.5 rounded-full border-2 flex flex-col items-center justify-center border-secondary-800 bg-primary-100">
+                      <Image
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        width={45}
+                        height={45}
+                        className="object-cover rounded-full"
+                      />
+                    </div>
+                    <p className="text-secondary-800 font-semibold">
+                      {testimonial.name}
+                    </p>
                   </div>
-                  <p className="text-secondary-800 font-semibold">
-                    {testimonial.name}
-                  </p>
+                  <span className="text-primary-800 flex items-center">
+                    {[...Array(testimonial.rating)].map((_, index) => (
+                      <FaStar key={index} />
+                    ))}
+                  </span>
+                  <p>{testimonial.content}</p>
                 </div>
-                <span className="text-primary-800 flex items-center">
-                  {[...Array(testimonial.rating)].map((_, index) => (
-                    <FaStar key={index} />
-                  ))}
-                </span>
-                <p>{testimonial.content}</p>
-              </div>
-            </Card>
-          </div>
-        ))}
+              </Card>
+            </div>
+          ))}
+        />
       </div>
     </Section>
   );
