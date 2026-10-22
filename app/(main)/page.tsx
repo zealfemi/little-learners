@@ -1,3 +1,4 @@
+import ExploreMore from "../_components/ExploreMore";
 import Faqs from "../_components/Faqs";
 import Hero from "../_components/Hero";
 import OurBenefits from "../_components/OurBenefits";
@@ -10,6 +11,7 @@ export default function Home() {
       <OurBenefits />
       <Testimonials />
       <Faqs />
+      <ExploreMore />
     </>
   );
 }
