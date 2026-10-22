@@ -16,7 +16,7 @@ const pages: pageType[] = [
   {
     title: "about us",
     desc: "Discover our Mission, Values, and our unwavering commitment to providing the best learning experience for your child. Learn about our passionate educators and our engaging approach to early education.",
-    link: "/about-us",
+    link: "/about",
   },
   {
     title: "academics",
