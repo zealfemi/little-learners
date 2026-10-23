@@ -80,7 +80,7 @@ export default function AboutTeamMembers() {
                       alt={member.name}
                       width={60}
                       height={60}
-                      className="w-15 lg:20"
+                      className="w-15 lg:20 border border-secondary-800 rounded-lg"
                     />
                     <p className="font-header font-bold text-secondary-800 md:text-xl lg:text-2xl capitalize">
                       {member.name}
