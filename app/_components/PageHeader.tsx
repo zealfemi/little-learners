@@ -27,9 +27,9 @@ export default function PageHeader({
       <div className="grid md:grid-cols-2 place-items-center gap-6 lg:gap-10 py-6 md:py-8 lg:py-12 text-center md:text-left">
         <div className="flex flex-col items-center md:items-start gap-3 w-full">
           <HeadingTextBefore>{subHeading}</HeadingTextBefore>
-          <p className="font-header font-bold text-secondary-800 text-2xl md:text-3xl lg:text-4xl capitalize">
+          <h1 className="font-header font-bold text-secondary-800 text-2xl md:text-3xl lg:text-4xl capitalize">
             {heading}
-          </p>
+          </h1>
         </div>
         <div className="flex flex-col gap-6">
           <p className="">{content}</p>

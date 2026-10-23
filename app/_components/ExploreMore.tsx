@@ -53,9 +53,9 @@ export default function ExploreMore() {
           <div key={page.title} className="flex h-full">
             <Card>
               <div className="flex flex-col gap-6 items-center text-center justify-center">
-                <p className="capitalize text-secondary-800 font-header font-bold text-lg lg:text-xl">
+                <h3 className="capitalize text-secondary-800 font-header font-bold text-xl md:text-2xl lg:text-3xl">
                   {page.title}
-                </p>
+                </h3>
                 <span className="w-full border-t-2 border-secondary-800"></span>
                 <p>{page.desc}</p>
 

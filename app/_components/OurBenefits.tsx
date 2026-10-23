@@ -75,9 +75,9 @@ export default function OurBenefits() {
         {benefits.map((benefit: benefitType) => (
           <div key={benefit.header} className="flex h-full w-full">
             <Card icon={benefit.icon}>
-              <p className="mb-4 text-secondary-800 font-header font-bold">
+              <h3 className="mb-4 text-secondary-800 font-header font-bold text-xl md:text-2xl lg:text-3xl">
                 {benefit.header}
-              </p>
+              </h3>
               <p>{benefit.content}</p>
             </Card>
           </div>

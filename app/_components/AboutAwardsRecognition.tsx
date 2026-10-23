@@ -52,9 +52,9 @@ export default function AboutAwardsRecognition() {
           <div key={award.title} className="flex h-full">
             <Card icon={award.icon}>
               <div>
-                <p className="font-header font-bold text-secondary-800 text-2xl md:text-3xl lg:text-4xl capitalize">
+                <h3 className="font-header font-bold text-secondary-800 text-xl md:text-2xl lg:text-3xl capitalize">
                   {award.title}
-                </p>
+                </h3>
                 <p className="mt-6">{award.desc}</p>
               </div>
             </Card>

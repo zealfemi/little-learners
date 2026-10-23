@@ -1,4 +1,5 @@
 import AboutAwardsRecognition from "@/app/_components/AboutAwardsRecognition";
+import AboutHistory from "@/app/_components/AboutHistory";
 import AboutMissionVision from "@/app/_components/AboutMissionVision";
 import PageHeader from "@/app/_components/PageHeader";
 import Section from "@/app/_components/Section";
@@ -16,6 +17,7 @@ export default function AboutUs() {
 
       <AboutMissionVision />
       <AboutAwardsRecognition />
+      <AboutHistory />
     </div>
   );
 }
