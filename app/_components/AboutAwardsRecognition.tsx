@@ -47,7 +47,7 @@ export default function AboutAwardsRecognition() {
         </p>
       </SectionHeader>
 
-      <div className="mt-10 grid md:grid-cols-2 gap-10">
+      <div className="mt-10 grid md:grid-cols-3 gap-10">
         {awards.map((award: awardType) => (
           <div key={award.title} className="flex h-full">
             <Card icon={award.icon}>
