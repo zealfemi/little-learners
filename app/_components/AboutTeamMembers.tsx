@@ -86,7 +86,9 @@ export default function AboutTeamMembers() {
                       {member.name}
                     </p>
                   </div>
-                  <HiMail />
+                  <span className="bg-primary-400 p-1 border-2 rounded-lg">
+                    <HiMail />
+                  </span>
                 </div>
 
                 <div className="bg-primary-400 border-2 border-secondary-800 rounded-lg p-4 lg:p-8">
