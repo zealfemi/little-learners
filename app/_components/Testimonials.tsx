@@ -91,10 +91,10 @@ export default function Testimonials() {
       <div className="mt-10 h-full">
         <Carousel>
           <Carousel.Buttons>
-            <Carousel.LeftButton />
+            <Carousel.LeftButton position="side" />
             <Carousel.Slides slides={cards}></Carousel.Slides>
 
-            <Carousel.RightButton />
+            <Carousel.RightButton position="side" />
           </Carousel.Buttons>
         </Carousel>
       </div>

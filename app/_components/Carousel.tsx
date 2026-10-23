@@ -89,9 +89,7 @@ function Slides({ slides }: slidesType) {
           transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)`,
         }}>
         {slides.map((slide, index) => (
-          <div
-            key={index}
-            className="w-full md:w-2/4 lg:w-1/3 shrink-0 px-2 lg:px-4">
+          <div key={index} className="w-full md:w-2/4 lg:w-1/3 shrink-0 px-4">
             {slide}
           </div>
         ))}
@@ -103,28 +101,30 @@ function Slides({ slides }: slidesType) {
 // 4. Buttons Wrapper uses totalSlides from Context to hide itself if not needed
 function SlideButtons({ children }: PropsWithChildren) {
   return (
-    <div className="flex items-center justify-end md:px-10">{children}</div>
+    <div className="relative flex items-center justify-end gap-6 md:px-10">
+      {children}
+    </div>
   );
 }
 
 // 5. Removed absolute positioning so they sit perfectly inside your Flex wrapper
-function LeftButton() {
+function LeftButton({ position }: { position: string }) {
   const { prevSlide, totalSlides } = useCarouselContext();
   return (
     <button
       onClick={prevSlide}
-      className={`${totalSlides <= 3 ? "md:hidden" : ""} border-2 border-secondary-800 bg-primary-300 hover:bg-primary-400 cursor-pointer w-10 h-10 rounded-md grid place-items-center transition-colors z-10`}>
+      className={`${totalSlides <= 3 ? "md:hidden" : ""} ${position === "side" ? "absolute left-0 top-1/2 -translate-y-1/2" : ""} border-2 border-secondary-800 bg-primary-300 hover:bg-primary-400 cursor-pointer w-10 h-10 rounded-md grid place-items-center transition-colors z-10`}>
       <FaChevronLeft className="text-secondary-800" />
     </button>
   );
 }
 
-function RightButton() {
+function RightButton({ position }: { position: string }) {
   const { nextSlide, totalSlides } = useCarouselContext();
   return (
     <button
       onClick={nextSlide}
-      className={`${totalSlides <= 3 ? "md:hidden" : ""} border-2 border-secondary-800 bg-primary-300 hover:bg-primary-400 cursor-pointer w-10 h-10 rounded-md grid place-items-center transition-colors z-10`}>
+      className={`${totalSlides <= 3 ? "md:hidden" : ""} ${position === "side" ? "absolute right-0 top-1/2 -translate-y-1/2" : ""} border-2 border-secondary-800 bg-primary-300 hover:bg-primary-400 cursor-pointer w-10 h-10 rounded-md grid place-items-center transition-colors z-10`}>
       <FaChevronRight className="text-secondary-800" />
     </button>
   );
