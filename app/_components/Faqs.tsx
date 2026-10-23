@@ -66,12 +66,12 @@ export default function Faqs() {
   return (
     <Section>
       <SectionHeader>
-        <HeadingTextBefore>Their Happy Words 🤗</HeadingTextBefore>
-        <HeadingText>Our Testimonials</HeadingText>
+        <HeadingTextBefore>Solutions For The Doubts</HeadingTextBefore>
+        <HeadingText>Frequently Asked Questions</HeadingText>
         <p>
-          Our testimonials are heartfelt reflections of the nurturing
-          environment we provide, where children flourish both academically and
-          emotionally.
+          Find all the essential information you need in our FAQ section,
+          designed to address the most frequently asked questions and help you
+          make informed decisions for your child&apos;s education.
         </p>
       </SectionHeader>
 

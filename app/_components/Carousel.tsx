@@ -1,7 +1,148 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, {
+  useState,
+  useEffect,
+  createContext,
+  PropsWithChildren,
+  useContext,
+} from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+
+// 1. Add totalSlides and setTotalSlides to the Context
+type carouselContextType = {
+  currentIndex: number;
+  itemsPerPage: number;
+  totalSlides: number;
+  setTotalSlides: (count: number) => void;
+  prevSlide: () => void;
+  nextSlide: () => void;
+};
+
+type slidesType = {
+  slides: React.ReactNode[];
+};
+
+const CarouselContext = createContext<carouselContextType | null>(null);
+
+function useCarouselContext() {
+  const context = useContext(CarouselContext);
+  if (!context)
+    throw new Error("Carousel components must be used inside <Carousel>");
+  return context;
+}
+
+// 2. The main Carousel becomes the Provider itself
+export default function Carousel({ children }: PropsWithChildren) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(1);
+  const [totalSlides, setTotalSlides] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerPage(window.innerWidth >= 768 ? 3 : 1);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const maxIndex = Math.max(0, totalSlides - itemsPerPage);
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+  };
+
+  return (
+    <CarouselContext.Provider
+      value={{
+        currentIndex,
+        itemsPerPage,
+        totalSlides,
+        setTotalSlides,
+        prevSlide,
+        nextSlide,
+      }}>
+      <div>{children}</div>
+    </CarouselContext.Provider>
+  );
+}
+
+// 3. Slides component counts the children and updates the context
+function Slides({ slides }: slidesType) {
+  const { currentIndex, itemsPerPage, setTotalSlides } = useCarouselContext();
+
+  useEffect(() => {
+    setTotalSlides(slides.length);
+  }, [slides.length, setTotalSlides]);
+
+  return (
+    <div className="relative w-full overflow-hidden">
+      <div
+        className="flex transition-transform duration-500 ease-in-out mb-6"
+        style={{
+          transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)`,
+        }}>
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className="w-full md:w-2/4 lg:w-1/3 shrink-0 px-2 lg:px-4">
+            {slide}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// 4. Buttons Wrapper uses totalSlides from Context to hide itself if not needed
+function SlideButtons({ children }: PropsWithChildren) {
+  return (
+    <div className="flex items-center justify-end md:px-10">{children}</div>
+  );
+}
+
+// 5. Removed absolute positioning so they sit perfectly inside your Flex wrapper
+function LeftButton() {
+  const { prevSlide, totalSlides } = useCarouselContext();
+  return (
+    <button
+      onClick={prevSlide}
+      className={`${totalSlides <= 3 ? "md:hidden" : ""} border-2 border-secondary-800 bg-primary-300 hover:bg-primary-400 cursor-pointer w-10 h-10 rounded-md grid place-items-center transition-colors z-10`}>
+      <FaChevronLeft className="text-secondary-800" />
+    </button>
+  );
+}
+
+function RightButton() {
+  const { nextSlide, totalSlides } = useCarouselContext();
+  return (
+    <button
+      onClick={nextSlide}
+      className={`${totalSlides <= 3 ? "md:hidden" : ""} border-2 border-secondary-800 bg-primary-300 hover:bg-primary-400 cursor-pointer w-10 h-10 rounded-md grid place-items-center transition-colors z-10`}>
+      <FaChevronRight className="text-secondary-800" />
+    </button>
+  );
+}
+
+// Attach sub-components to the main export
+Carousel.Slides = Slides;
+Carousel.Buttons = SlideButtons;
+Carousel.LeftButton = LeftButton;
+Carousel.RightButton = RightButton;
+
+/**
+"use client";
+
+import { useState, useEffect, createContext } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+
+const CarouselContext = createContext({})
 
 export default function Carousel({ slides }: { slides: React.ReactNode[] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,20 +170,19 @@ export default function Carousel({ slides }: { slides: React.ReactNode[] }) {
 
   return (
     <div className="relative w-full overflow-hidden">
-      {/* Slides Container */}
+      
       <div
         className="flex transition-transform duration-500 ease-in-out mb-6"
         style={{
           transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)`,
         }}>
         {slides.map((slide, index) => (
-          <div key={index} className="w-full md:w-1/3 shrink-0 px-2 md:px-10">
+          <div key={index} className="w-full md:w-1/3 shrink-0 px-5 lg:px-10">
             {slide}
           </div>
         ))}
       </div>
 
-      {/* Prev/Next Buttons */}
       <div
         className={`${slides.length === 3 && "md:hidden"} flex gap-6 items-center justify-end md:px-10`}>
         <button
@@ -60,3 +200,4 @@ export default function Carousel({ slides }: { slides: React.ReactNode[] }) {
     </div>
   );
 }
+**/
