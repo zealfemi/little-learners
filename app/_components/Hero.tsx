@@ -14,7 +14,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="h-full flex flex-col gap-6 justify-center">
+      <div className="h-full flex flex-col gap-10 justify-center">
         <div className="text-center md:text-left">
           <p className="inline-flex text-secondary-800 md:text-lg border-b-2">
             Welcome to Little Learners Academy

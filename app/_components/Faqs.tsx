@@ -75,7 +75,7 @@ export default function Faqs() {
         </p>
       </SectionHeader>
 
-      <div className="grid md:grid-cols-2 place-items-start mt-6 gap-6 lg:gap-7.5">
+      <div className="grid md:grid-cols-2 place-items-start mt-10 gap-6 lg:gap-7.5">
         {faqs.map((faq: faqsType) => (
           <div key={faq.question}>
             <Faq

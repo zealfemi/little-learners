@@ -34,7 +34,7 @@ export default function AboutMissionVision() {
         </p>
       </SectionHeader>
 
-      <div className="mt-6 lg:mt-10 grid md:grid-cols-2 gap-6">
+      <div className="mt-10 grid md:grid-cols-2 gap-6">
         {missionVision.map((mv) => (
           <div key={mv.heading} className="flex h-full">
             <Card>

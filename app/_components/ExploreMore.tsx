@@ -48,7 +48,7 @@ export default function ExploreMore() {
         </p>
       </SectionHeader>
 
-      <div className="mt-6 grid md:grid-cols-2 gap-6 w-full">
+      <div className="mt-10 grid md:grid-cols-2 gap-6 w-full">
         {pages.map((page: pageType) => (
           <div key={page.title} className="flex h-full">
             <Card>
