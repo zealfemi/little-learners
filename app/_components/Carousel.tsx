@@ -47,13 +47,13 @@ export default function Carousel({ slides }: { slides: React.ReactNode[] }) {
         className={`${slides.length === 3 && "md:hidden"} flex gap-6 items-center justify-end md:px-10`}>
         <button
           onClick={prevSlide}
-          className="border-2 border-secondary-800 bg-primary-300 hover:bg-primary-400 cursor-pointer w-10 h-10 rounded-md grid place-items-center transition-colors z-10">
+          className="absolute left-0 md:left-4 top-1/2 -translate-y-1/2 border-2 border-secondary-800 bg-primary-300 hover:bg-primary-400 cursor-pointer w-10 h-10 rounded-md grid place-items-center transition-colors z-10">
           <FaChevronLeft className="text-secondary-800" />
         </button>
 
         <button
           onClick={nextSlide}
-          className="border-2 border-secondary-800 bg-primary-300 hover:bg-primary-400 cursor-pointer w-10 h-10 rounded-md grid place-items-center transition-colors z-10">
+          className="absolute right-0 md:right-4 top-1/2 -translate-y-1/2 border-2 border-secondary-800 bg-primary-300 hover:bg-primary-400 cursor-pointer w-10 h-10 rounded-md grid place-items-center transition-colors z-10">
           <FaChevronRight className="text-secondary-800" />
         </button>
       </div>
