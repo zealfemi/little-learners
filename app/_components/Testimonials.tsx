@@ -38,13 +38,6 @@ const testimonials: testimonialType[] = [
     content:
       "My son's social and academic growth has been remarkable since joining Little Learners Academy. I am grateful for the supportive and dedicated teachers.",
   },
-  {
-    image: "/images/testimonials/testimonial-3.png",
-    name: "Emily L.",
-    rating: 5,
-    content:
-      "My son's social and academic growth has been remarkable since joining Little Learners Academy. I am grateful for the supportive and dedicated teachers.",
-  },
 ];
 
 export default function Testimonials() {
