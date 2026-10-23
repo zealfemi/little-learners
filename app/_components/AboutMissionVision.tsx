@@ -5,8 +5,15 @@ import HeadingTextBefore from "./HeadingTextBefore";
 import Section from "./Section";
 import SectionHeader from "./SectionHeader";
 import { FaSchoolFlag } from "react-icons/fa6";
+import { IconType } from "react-icons";
 
-const missionVision = [
+type mvType = {
+  heading: string;
+  content: string;
+  icon: IconType;
+};
+
+const missionVision: mvType[] = [
   {
     heading: "Mission",
     content:
@@ -35,7 +42,7 @@ export default function AboutMissionVision() {
       </SectionHeader>
 
       <div className="mt-10 grid md:grid-cols-2 gap-6">
-        {missionVision.map((mv) => (
+        {missionVision.map((mv: mvType) => (
           <div key={mv.heading} className="flex h-full">
             <Card>
               <div>
