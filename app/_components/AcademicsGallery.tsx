@@ -124,7 +124,7 @@ export default function AcademicsGallery() {
                         </Carousel.Buttons>
                       </div>
                     </div>
-                    <p>{g.content}</p>
+                    <p className="text-center md:text-left">{g.content}</p>
                   </div>
                 </Carousel>
               </Card>
