@@ -76,6 +76,7 @@ export default function AcademicsLearn() {
                       src={l.image}
                       alt={l.heading}
                       fill
+                      quality={100}
                       placeholder="blur"
                       blurDataURL={blurDataURL}
                       className="w-full object-cover rounded-md"
