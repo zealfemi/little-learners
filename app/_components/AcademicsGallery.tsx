@@ -99,7 +99,7 @@ export default function AcademicsGallery() {
                       slides={g.images.map((i: string) => (
                         <div
                           key={g.heading}
-                          className="relative border-2 border-secondary-800 rounded-lg w-full h-47.5 md:h-65 lg:h-75">
+                          className="relative border-2 border-secondary-800 rounded-lg w-full h-55 md:h-65 lg:h-75">
                           <Image
                             src={i}
                             alt={g.heading}
