@@ -73,6 +73,9 @@ const gallery: galleryType[] = [
 ];
 
 export default function AcademicsGallery() {
+  const blurDataURL =
+    "data:image/png;base64,iVBORw0KGgoAAAANSU5EUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==";
+
   return (
     <Section>
       <SectionHeader>
@@ -101,6 +104,8 @@ export default function AcademicsGallery() {
                             src={i}
                             alt={g.heading}
                             fill
+                            placeholder="blur"
+                            blurDataURL={blurDataURL}
                             className="w-full object-cover rounded-md"
                           />
                         </div>

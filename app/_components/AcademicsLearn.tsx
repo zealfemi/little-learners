@@ -47,6 +47,9 @@ const learn: learnType[] = [
 ];
 
 export default function AcademicsLearn() {
+  const blurDataURL =
+    "data:image/png;base64,iVBORw0KGgoAAAANSU5EUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==";
+
   return (
     <Section>
       <SectionHeader>
@@ -73,6 +76,8 @@ export default function AcademicsLearn() {
                       src={l.image}
                       alt={l.heading}
                       fill
+                      placeholder="blur"
+                      blurDataURL={blurDataURL}
                       className="w-full object-cover rounded-md"
                     />
                   </div>
