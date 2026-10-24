@@ -20,7 +20,7 @@ export default function CardsConnector({ connector }: { connector: number }) {
           </Card>
         </div>
 
-        <div className="flex flex-col justify-center items-center w-fit -mt-2 z-1">
+        <div className="flex flex-col justify-center items-center w-fit -mt-2.5 z-1">
           <div className="w-5 h-5 bg-white border-2 border-secondary-800 rounded-[10px]"></div>
           <div className="w-3 h-10 bg-primary-500 flex items-center justify-center">
             <div className="h-10 border-l-2 border-secondary-800"></div>
