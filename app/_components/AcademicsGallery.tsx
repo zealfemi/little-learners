@@ -106,6 +106,7 @@ export default function AcademicsGallery() {
                             fill
                             placeholder="blur"
                             blurDataURL={blurDataURL}
+                            quality={100}
                             className="w-full object-cover rounded-md"
                           />
                         </div>
