@@ -49,10 +49,10 @@ export default function NavMobile() {
             Academics
           </Link>
           <Link
-            href="/admission"
+            href="/admissions"
             onClick={toggleMenu}
-            className={`${pathName === "/admission" && "bg-primary-400"} border-b-2 border-b-secondary-800 py-5 grid place-items-center h-full hover:bg-primary-300`}>
-            Admission
+            className={`${pathName === "/admissions" && "bg-primary-400"} border-b-2 border-b-secondary-800 py-5 grid place-items-center h-full hover:bg-primary-300`}>
+            Admissions
           </Link>
           <Link
             href="/student-life"

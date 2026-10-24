@@ -42,9 +42,9 @@ export default function Header() {
             Academics
           </Link>
           <Link
-            href="/admission"
-            className={`${pathName === "/admission" && "bg-primary-400"} border-l-2 border-l-secondary-800 px-5 lg:px-6 grid place-items-center h-full hover:bg-primary-300`}>
-            Admission
+            href="/admissions"
+            className={`${pathName === "/admissions" && "bg-primary-400"} border-l-2 border-l-secondary-800 px-5 lg:px-6 grid place-items-center h-full hover:bg-primary-300`}>
+            Admissions
           </Link>
           <Link
             href="/student-life"
