@@ -120,7 +120,7 @@ export default function AdmissionsFees() {
 
       <div className="mt-10">
         <Card padding="w-full p-6 lg:p-10">
-          <div className="overflow-x-scroll -webkit-overflow-scrolling-touch [webkit-scrollbar]:block pb-4 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-secondary-700 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-primary-700 hover:[&::-webkit-scrollbar-thumb]:bg-primary-800">
+          <div className="overflow-x-auto pb-4 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-secondary-700 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-primary-700 hover:[&::-webkit-scrollbar-thumb]:bg-primary-800">
             <div className="min-w-225">
               {/* HEAD */}
               <div className="bg-primary-400 border-2 border-secondary-800 rounded-lg">
