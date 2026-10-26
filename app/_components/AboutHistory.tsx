@@ -57,7 +57,7 @@ export default function AboutHistory() {
             <Card>
               <div>
                 <div className="flex justify-between items-center">
-                  <h3 className="font-header font-bold text-secondary-800 text-xl md:text-2xl lg:text-3xl capitalize">
+                  <h3 className="font-header font-bold text-secondary-800 text-xl md:text-2xl capitalize">
                     {hist.heading}
                   </h3>
                 </div>

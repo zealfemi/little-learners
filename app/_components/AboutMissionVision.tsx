@@ -47,7 +47,7 @@ export default function AboutMissionVision() {
             <Card>
               <div>
                 <div className="flex justify-between items-center">
-                  <h3 className="font-header font-bold text-secondary-800 text-2xl md:text-3xl lg:text-4xl capitalize">
+                  <h3 className="font-header font-bold text-secondary-800 text-xl md:text-2xl capitalize">
                     {mv.heading}
                   </h3>
                   <mv.icon size={40} color="#ff8d4c" />

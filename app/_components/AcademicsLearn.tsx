@@ -70,7 +70,8 @@ export default function AcademicsLearn() {
             <div key={l.heading} className="flex h-full">
               <Card>
                 <div className="flex flex-col items-center justify-center w-full gap-10">
-                  <span className="border-2 border-t-0 border-secondary-800 rounded-bl-lg rounded-br-lg w-20 h-60 lg:w-25 lg:h-65 absolute top-0 bg-primary-400"></span>
+                  <span className="border-2 border-t-0 border-secondary-800 rounded-bl-lg rounded-br-lg w-20 h-65 lg:w-25 lg:h-75 absolute top-0 bg-primary-400"></span>
+
                   <div className="border-2 border-secondary-800 rounded-lg relative w-full h-55 lg:h-60">
                     <Image
                       src={l.image}
@@ -83,7 +84,7 @@ export default function AcademicsLearn() {
                     />
                   </div>
                   <div className="flex flex-col gap-3">
-                    <h3 className="font-header font-bold text-secondary-800 text-xl md:text-2xl lg:text-3xl capitalize">
+                    <h3 className="font-header font-bold text-secondary-800 text-xl md:text-2xl capitalize">
                       {l.heading}
                     </h3>
                     <p>{l.content}</p>

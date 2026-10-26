@@ -115,7 +115,7 @@ export default function AcademicsGallery() {
 
                   <div className="flex flex-col gap-5">
                     <div className="flex flex-col md:flex-row gap-5 items-center justify-between">
-                      <h3 className="order-2 md:order-1 font-header font-bold text-secondary-800 text-xl md:text-2xl lg:text-3xl capitalize">
+                      <h3 className="order-2 md:order-1 font-header font-bold text-secondary-800 text-xl md:text-2xl capitalize">
                         {g.heading}
                       </h3>
                       <div className="order-1 md:order-2">

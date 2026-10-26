@@ -76,7 +76,7 @@ export default function AcademicsFeatures() {
           {features.map((feature: featureType) => (
             <div key={feature.heading} className="flex h-full">
               <Card icon={feature.icon}>
-                <h3 className="font-header font-bold text-secondary-800 text-xl md:text-2xl lg:text-3xl capitalize">
+                <h3 className="font-header font-bold text-secondary-800 text-xl md:text-2xl capitalize">
                   {feature.heading}
                 </h3>
                 <p className="mt-6">{feature.content}</p>

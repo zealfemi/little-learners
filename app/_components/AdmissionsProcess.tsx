@@ -63,7 +63,7 @@ export default function AdmissionsProcess() {
               <CardsConnector connector={index} />
               <Card>
                 <div className="flex flex-col gap-6">
-                  <h3 className="font-header font-bold text-secondary-800 text-xl md:text-2xl lg:text-3xl capitalize">
+                  <h3 className="font-header font-bold text-secondary-800 text-xl md:text-2xl capitalize">
                     {p.heading}
                   </h3>
                   <p>{p.content}</p>

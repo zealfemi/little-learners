@@ -32,13 +32,20 @@ function useCarouselContext() {
 }
 
 export default function Carousel({ children }: PropsWithChildren) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [rawCurrentIndex, setRawCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(1);
   const [totalSlides, setTotalSlides] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
-      setItemsPerPage(window.innerWidth >= 768 ? 4 : 1);
+      const width = window.innerWidth;
+      if (width >= 1024) {
+        setItemsPerPage(3);
+      } else if (width >= 768) {
+        setItemsPerPage(2);
+      } else {
+        setItemsPerPage(1);
+      }
     };
 
     handleResize();
@@ -48,12 +55,14 @@ export default function Carousel({ children }: PropsWithChildren) {
 
   const maxIndex = Math.max(0, totalSlides - itemsPerPage);
 
+  const currentIndex = Math.min(rawCurrentIndex, maxIndex);
+
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+    setRawCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
   };
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+    setRawCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
   };
 
   return (
@@ -71,7 +80,7 @@ export default function Carousel({ children }: PropsWithChildren) {
   );
 }
 
-function Slides({ slides }: PropsWithChildren<slidesType>) {
+function Slides({ slides }: slidesType) {
   const { currentIndex, itemsPerPage, setTotalSlides } = useCarouselContext();
 
   useEffect(() => {
@@ -86,7 +95,7 @@ function Slides({ slides }: PropsWithChildren<slidesType>) {
           transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)`,
         }}>
         {slides.map((slide, index) => (
-          <div key={index} className="w-full md:w-2/4 lg:w-1/3 shrink-0 px-4">
+          <div key={index} className="w-full md:w-1/2 lg:w-1/3 shrink-0 px-4">
             {slide}
           </div>
         ))}
@@ -103,23 +112,29 @@ function SlideButtons({ children }: PropsWithChildren) {
   );
 }
 
-function LeftButton({ position }: { position: string }) {
-  const { prevSlide, totalSlides } = useCarouselContext();
+function LeftButton({ position }: { position?: string }) {
+  const { prevSlide, totalSlides, itemsPerPage } = useCarouselContext();
   return (
     <button
+      type="button"
       onClick={prevSlide}
-      className={`${totalSlides <= 3 ? "md:hidden" : ""} ${position === "side" ? "absolute left-0 top-1/2 -translate-y-1/2" : ""} border-2 border-secondary-800 bg-primary-300 hover:bg-primary-400 cursor-pointer w-10 h-10 rounded-md grid place-items-center transition-colors z-10`}>
+      className={`${totalSlides <= itemsPerPage ? "hidden" : ""} ${
+        position === "side" ? "absolute left-0 top-1/2 -translate-y-1/2" : ""
+      } border-2 border-secondary-800 bg-primary-300 hover:bg-primary-400 cursor-pointer w-10 h-10 rounded-md grid place-items-center transition-colors z-10`}>
       <FaChevronLeft className="text-secondary-800" />
     </button>
   );
 }
 
-function RightButton({ position }: { position: string }) {
-  const { nextSlide, totalSlides } = useCarouselContext();
+function RightButton({ position }: { position?: string }) {
+  const { nextSlide, totalSlides, itemsPerPage } = useCarouselContext();
   return (
     <button
+      type="button"
       onClick={nextSlide}
-      className={`${totalSlides <= 3 ? "md:hidden" : ""} ${position === "side" ? "absolute right-0 top-1/2 -translate-y-1/2" : ""} border-2 border-secondary-800 bg-primary-300 hover:bg-primary-400 cursor-pointer w-10 h-10 rounded-md grid place-items-center transition-colors z-10`}>
+      className={`${totalSlides <= itemsPerPage ? "hidden" : ""} ${
+        position === "side" ? "absolute right-0 top-1/2 -translate-y-1/2" : ""
+      } border-2 border-secondary-800 bg-primary-300 hover:bg-primary-400 cursor-pointer w-10 h-10 rounded-md grid place-items-center transition-colors z-10`}>
       <FaChevronRight className="text-secondary-800" />
     </button>
   );
