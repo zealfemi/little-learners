@@ -1,8 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { HiArrowRight } from "react-icons/hi2";
 
 export default function NotificationBar() {
+  const pathName = usePathname();
+
+  if (pathName === "/admissions") return null;
+
   return (
     <div className="mt-4 -mb-3 px-2.5 md:px-11 overflow-hidden">
       <Link
