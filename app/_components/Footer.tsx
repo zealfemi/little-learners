@@ -49,8 +49,40 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="col-span-2 grid grid-cols-2 md:grid-cols-4 gap-7.5">
-            <div className="md:col-span-2 grid md:grid-cols-2 gap-7.5">
+          <div className="col-span-2 grid grid-cols-2 lg:grid-cols-4 gap-7.5">
+            <div className="order-1">
+              <p className="text-secondary-800 mb-2">Home</p>
+              <ul className="flex flex-col gap-2">
+                <li>Features</li>
+                <li>Out Testimonials</li>
+                <li>FAQs</li>
+              </ul>
+            </div>
+            <div className="order-3 lg:order-2">
+              <p className="text-secondary-800 mb-2">About Us</p>
+              <ul className="flex flex-col gap-2">
+                <li>Our Mission</li>
+                <li>Our Vision</li>
+                <li>Awards and Recognition</li>
+                <li>History</li>
+                <li>Teachers</li>
+              </ul>
+            </div>
+            <div className="order-2 lg:order-3">
+              <p className="text-secondary-800 mb-2">Academics</p>
+              <ul className="flex flex-col gap-2">
+                <li>Special Features</li>
+                <li>Gallery</li>
+              </ul>
+            </div>
+            <div className="order-4">
+              <p className="text-secondary-800 mb-2">Contact Us</p>
+              <ul className="flex flex-col gap-2">
+                <li>Information</li>
+                <li>Map & Direction</li>
+              </ul>
+            </div>
+            {/* <div className="md:col-span-2 grid md:grid-cols-2 gap-7.5">
               <div>
                 <p className="text-secondary-800 mb-2">Home</p>
                 <ul className="flex flex-col gap-2">
@@ -85,7 +117,7 @@ export default function Footer() {
                   <li>Map & Direction</li>
                 </ul>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="col-span-3 border-t-2 border-b-2 border-secondary-800 flex flex-col md:flex-row justify-between items-center gap-5 py-5">
