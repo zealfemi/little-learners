@@ -7,7 +7,7 @@ import Card from "./Card";
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="mt-10 md:mt-15 lg:mt-20">
       <Card>
         <div className="flex flex-col md:grid grid-cols-3 gap-10 mt-6">
           <div className="flex flex-col gap-10">
