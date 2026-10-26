@@ -1,3 +1,4 @@
+import ContactForm from "@/app/_components/ContactForm";
 import PageHeader from "@/app/_components/PageHeader";
 import Section from "@/app/_components/Section";
 import { HiLocationMarker, HiMail } from "react-icons/hi";
@@ -27,6 +28,8 @@ export default function Contact() {
           </div>
         </PageHeader>
       </Section>
+
+      <ContactForm />
     </div>
   );
 }
