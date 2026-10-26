@@ -4,7 +4,7 @@ import { HiArrowRight } from "react-icons/hi2";
 
 export default function NotificationBar() {
   return (
-    <div className="mt-4 px-2.5 md:px-11 overflow-hidden">
+    <div className="mt-4 -mb-3 px-2.5 md:px-11 overflow-hidden">
       <Link
         href="/admissions"
         className="bg-primary-400 border-2 border-secondary-800 px-3 py-2 rounded-sm flex items-center justify-center gap-2 text-secondary-800 relative text-sm overflow-hidden">
