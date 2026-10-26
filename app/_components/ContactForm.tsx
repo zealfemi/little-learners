@@ -4,6 +4,7 @@ import HeadingText from "./HeadingText";
 import HeadingTextBefore from "./HeadingTextBefore";
 import Section from "./Section";
 import SectionHeader from "./SectionHeader";
+import { FaFacebook, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 export default function ContactForm() {
   return (
@@ -22,8 +23,20 @@ export default function ContactForm() {
       <div className="mt-10">
         <Card>
           <div>
-            <form className="flex flex-col gap-6 lg:gap-10">
-              <div className="grid md:grid-cols-2 gap-6 lg:gap-10 text-secondary-800">
+            <form className="flex flex-col gap-6 lg:gap-10 relative">
+              <div className="absolute w-full top-0 -mt-11 lg:-mt-15 flex gap-4 items-center justify-center text-secondary-800">
+                <span className="w-12 md:w-18 lg:w-25 h-10 grid place-items-center bg-primary-400 border-2 border-secondary-800 rounded-lg">
+                  <FaFacebook />
+                </span>
+                <span className="w-12 md:w-18 lg:w-25 h-10 grid place-items-center bg-primary-400 border-2 border-secondary-800 rounded-lg">
+                  <FaXTwitter />
+                </span>
+                <span className="w-12 md:w-18 lg:w-25 h-10 grid place-items-center bg-primary-400 border-2 border-secondary-800 rounded-lg">
+                  <FaLinkedin />
+                </span>
+              </div>
+
+              <div className="mt-6 lg:mt-10 grid md:grid-cols-2 gap-6 lg:gap-10 text-secondary-800">
                 <span className="flex flex-col gap-2">
                   <label htmlFor="parentName" className="font-semibold text-lg">
                     Parent Name
@@ -94,7 +107,7 @@ export default function ContactForm() {
                     <select
                       name="program"
                       className="w-full px-4 py-2 lg:py-3 border-2 border-secondary-800 rounded-lg appearance-none">
-                      <option disabled selected className="p-3">
+                      <option value="" disabled selected className="p-3">
                         Select Program
                       </option>
                       <option value="" className="p-3">
