@@ -16,7 +16,7 @@ export default function Faq({
       className={`border-2 border-secondary-800 rounded-lg py-6 px-7 lg:py-8 lg:px-9 ${isOpen && "bg-primary-100"} transition-all duration-300 ease-in-out`}>
       <div className="w-full">
         <button
-          className="text-lg lg:text-[22px] font-semibold text-secondary-800 flex justify-between items-center gap-6 lg:gap-7.5 w-full"
+          className="lg:text-lg font-semibold text-secondary-800 flex justify-between items-center gap-6 lg:gap-7.5 w-full"
           onClick={() => onClick()}>
           <span className="text-left">{question}</span>
           <span className="border-2 rounded-md w-6 h-6 text-sm grid place-items-center bg-primary-300 cursor-pointer shrink-0">
@@ -32,7 +32,7 @@ export default function Faq({
           }`}>
           <div className="min-h-0">
             <div className="border-t-2 border-secondary-800 my-5 lg:my-6"></div>
-            <p className="lg:text-xl">{answer}</p>
+            <p>{answer}</p>
           </div>
         </div>
       </div>
