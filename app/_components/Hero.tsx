@@ -31,7 +31,9 @@ export default function Hero() {
           us as we embark on an exciting educational journey together!
         </p>
 
-        <Card shadow="shadow-primary-800" padding="h-fit p-6 lg:p-10">
+        <Card
+          shadow="shadow-primary-800"
+          padding="h-fit p-6 lg:p-10 text-center">
           <div className="grid md:grid-cols-3 gap-6">
             <p className="flex flex-col items-center gap-1">
               <span className="text-3xl lg:text-4xl font-header font-extrabold text-secondary-800">
