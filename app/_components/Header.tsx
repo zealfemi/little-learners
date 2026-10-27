@@ -1,6 +1,7 @@
 "use client";
 
-import logo from "@/public/images/logo.png";
+// import logo from "@/public/images/little-learners-logo.png";
+import logoSvg from "@/public/images/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -16,9 +17,9 @@ export default function Header() {
           href="/"
           className="h-full bg-primary-800 rounded-tl-md rounded-bl-md border-r-2 border-r-secondary-800 grid place-items-center px-5 lg:px-6">
           <Image
-            src={logo}
+            src={logoSvg}
             alt="site logo"
-            className="object-cover w-34 md:w-38.75 lg:w-full"
+            className="object-cover w-34 lg:w-full"
             unoptimized
             priority
           />
