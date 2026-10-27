@@ -71,7 +71,7 @@ export default function OurBenefits() {
         </p>
       </SectionHeader>
 
-      <div className="grid md:grid-cols-3 gap-10 mt-10 md:mt-12 h-full w-full">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10 md:mt-12 h-full w-full">
         {benefits.map((benefit: benefitType) => (
           <div key={benefit.header} className="flex h-full w-full">
             <Card icon={benefit.icon}>
