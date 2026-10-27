@@ -93,7 +93,7 @@ export default function AcademicsGallery() {
           {gallery.map((g: galleryType) => (
             <div key={g.heading}>
               <Card>
-                <Carousel small={1} medium={2} large={3}>
+                <Carousel small={1} medium={2} large={4}>
                   <div className="-mt-25 -mx-4">
                     <Carousel.Slides
                       slides={g.images.map((i: string) => (

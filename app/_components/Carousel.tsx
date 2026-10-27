@@ -106,7 +106,7 @@ function Slides({ slides }: slidesType) {
           transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)`,
         }}>
         {slides.map((slide, index) => (
-          <div key={index} className="w-full md:w-1/2 lg:w-1/3 shrink-0 px-4">
+          <div key={index} className="w-full md:w-1/2 lg:w-1/4 shrink-0 px-4">
             {slide}
           </div>
         ))}
