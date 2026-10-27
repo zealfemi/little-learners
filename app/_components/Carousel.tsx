@@ -22,6 +22,12 @@ type slidesType = {
   slides: React.ReactNode[];
 };
 
+type carouselType = {
+  small: number;
+  medium: number;
+  large: number;
+};
+
 const CarouselContext = createContext<carouselContextType | null>(null);
 
 function useCarouselContext() {
@@ -31,7 +37,12 @@ function useCarouselContext() {
   return context;
 }
 
-export default function Carousel({ children }: PropsWithChildren) {
+export default function Carousel({
+  small,
+  medium,
+  large,
+  children,
+}: PropsWithChildren<carouselType>) {
   const [rawCurrentIndex, setRawCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(1);
   const [totalSlides, setTotalSlides] = useState(0);
@@ -40,18 +51,18 @@ export default function Carousel({ children }: PropsWithChildren) {
     const handleResize = () => {
       const width = window.innerWidth;
       if (width >= 1024) {
-        setItemsPerPage(3);
+        setItemsPerPage(large);
       } else if (width >= 768) {
-        setItemsPerPage(2);
+        setItemsPerPage(medium);
       } else {
-        setItemsPerPage(1);
+        setItemsPerPage(small);
       }
     };
 
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [small, medium, large]);
 
   const maxIndex = Math.max(0, totalSlides - itemsPerPage);
 
