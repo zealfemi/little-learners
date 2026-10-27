@@ -10,6 +10,7 @@ import React, {
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 type carouselContextType = {
+  large: number;
   currentIndex: number;
   itemsPerPage: number;
   totalSlides: number;
@@ -79,6 +80,7 @@ export default function Carousel({
   return (
     <CarouselContext.Provider
       value={{
+        large,
         currentIndex,
         itemsPerPage,
         totalSlides,
@@ -92,7 +94,8 @@ export default function Carousel({
 }
 
 function Slides({ slides }: slidesType) {
-  const { currentIndex, itemsPerPage, setTotalSlides } = useCarouselContext();
+  const { currentIndex, itemsPerPage, setTotalSlides, large } =
+    useCarouselContext();
 
   useEffect(() => {
     setTotalSlides(slides.length);
@@ -106,7 +109,9 @@ function Slides({ slides }: slidesType) {
           transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)`,
         }}>
         {slides.map((slide, index) => (
-          <div key={index} className="w-full md:w-1/2 lg:w-1/4 shrink-0 px-4">
+          <div
+            key={index}
+            className={`w-full md:w-1/2 ${large === 3 ? "lg:w-1/3" : "lg:w-1/4"} shrink-0 px-4`}>
             {slide}
           </div>
         ))}
