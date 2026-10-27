@@ -1,4 +1,4 @@
-import logo from "@/public/images/logo.png";
+import logo from "@/public/images/logo.svg";
 import Image from "next/image";
 import { FaFacebook, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { HiLocationMarker, HiMail } from "react-icons/hi";
@@ -16,7 +16,7 @@ export default function Footer() {
                 <Image
                   src={logo}
                   alt="site logo"
-                  className="object-cover w-34 md:w-38 lg:w-full"
+                  className="object-cover w-34 lg:w-full"
                   unoptimized
                   priority
                 />
