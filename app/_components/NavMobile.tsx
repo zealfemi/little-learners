@@ -18,7 +18,7 @@ export default function NavMobile() {
     <>
       {/* MOBILE NAV */}
       <button
-        className="md:hidden h-full bg-primary-400 rounded-tr-md rounded-br-md border-l-2 border-l-secondary-800 grid place-items-center px-5 lg:px-6 cursor-pointer hover:bg-primary-300"
+        className="lg:hidden h-full bg-primary-400 rounded-tr-md rounded-br-md border-l-2 border-l-secondary-800 grid place-items-center px-5 lg:px-6 cursor-pointer hover:bg-primary-300"
         onClick={toggleMenu}>
         {!showMenu ? <HiMenuAlt3 size={20} /> : <HiXMark size={20} />}
       </button>

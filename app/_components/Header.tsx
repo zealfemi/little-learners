@@ -26,7 +26,7 @@ export default function Header() {
         </Link>
 
         {/* LAPTOP AND PC NAV */}
-        <nav className="hidden md:flex items-center text-center h-full">
+        <nav className="hidden lg:flex items-center text-center h-full">
           <Link
             href="/"
             className={`${pathName === "/" && "bg-primary-400"} border-l-2 border-l-secondary-800 px-5 lg:px-6 grid place-items-center h-full hover:bg-primary-300`}>

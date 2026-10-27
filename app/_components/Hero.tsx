@@ -4,7 +4,7 @@ import Card from "./Card";
 
 export default function Hero() {
   return (
-    <div className="grid md:grid-cols-2 gap-10 py-10 md:py-15 lg:py-20 md:px-5">
+    <div className="grid md:grid-cols-2 gap-10 py-10 md:py-15 lg:py-20 md:px-5 items-center">
       <div className="">
         <Image
           src={hero}
